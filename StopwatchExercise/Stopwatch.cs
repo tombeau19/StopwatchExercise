@@ -21,7 +21,8 @@ namespace StopwatchExercise
 
         public void Stop()
         {
-            if (!_running) return;
+            if (!_running) 
+                throw new InvalidOperationException("Stopwatch has not been started");
 
             _running = false;
             _stopTime = DateTime.Now;
