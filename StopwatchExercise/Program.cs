@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 
 namespace StopwatchExercise
 {
@@ -6,7 +7,28 @@ namespace StopwatchExercise
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var stopWatch = new Stopwatch();
+
+            stopWatch.Start();
+            Thread.Sleep(3000);
+            stopWatch.Stop();
+
+            stopWatch.Start();
+            Thread.Sleep(5000);
+            stopWatch.Stop();
+
+            //RESET//
+            stopWatch.Reset();
+
+
+            stopWatch.Start();
+            Thread.Sleep(3000);
+            stopWatch.Stop();
+
+            stopWatch.Start();
+            Thread.Sleep(5000);
+            stopWatch.Stop();
+
         }
     }
 }
