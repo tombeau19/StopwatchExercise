@@ -11,7 +11,7 @@ namespace StopwatchExercise
 
         public void Start()
         {
-            if (_running == true)
+            if (_running)
                 throw new InvalidOperationException("Stopwatch Already Running!");
 
             _running = true;
@@ -21,6 +21,8 @@ namespace StopwatchExercise
 
         public void Stop()
         {
+            if (!_running) return;
+
             _running = false;
             _stopTime = DateTime.Now;
             _duration += _stopTime - _startTime;
